@@ -1,4 +1,10 @@
 package com.filemanager.filemanager.repository;
 
-public interface FileRepository {
+import com.filemanager.filemanager.model.File;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface FileRepository extends JpaRepository<File, Integer> {
+
 }

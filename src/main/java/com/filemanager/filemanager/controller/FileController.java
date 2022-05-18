@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/file")
+@CrossOrigin
 public class FileController {
     @Autowired
     private FileService  fileService;

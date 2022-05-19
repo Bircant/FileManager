@@ -19,6 +19,7 @@ public class FileServiceImp implements FileService{
 
     @Override
     public List<File> getAllFiles() {
+        System.out.println("heyyyyyyyyyyyyyy");
         return fileRepository.findAll();
     }
 }

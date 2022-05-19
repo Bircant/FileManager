@@ -1,9 +1,7 @@
 package com.filemanager.filemanager.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.net.URI;
 
 @Entity
 public class File {
@@ -11,11 +9,21 @@ public class File {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private int id;                 // Id for files
     private String name;            // Name of the files
-    private String path;            // Path of the file
+    String  path;            // Path of the file
     private String size;            // Size of the file
     private String extension;
 
+    @Lob
+    private byte[] data;
+
     public File() {
+    }
+
+    public File(String name, String path, String size, byte[] data) {
+        this.name = name;
+        this.path = path;
+        this.data = data;
+        this.size = size;
     }
 
     public int getId() {
@@ -56,5 +64,13 @@ public class File {
 
     public void setExtension(String extension) {
         this.extension = extension;
+    }
+
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
     }
 }
